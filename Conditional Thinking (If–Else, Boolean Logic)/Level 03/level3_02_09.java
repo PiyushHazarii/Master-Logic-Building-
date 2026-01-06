@@ -3,35 +3,27 @@ import java.util.Scanner;
 public class level3_02_09 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        // Apprach 1: Brute Force
-        int[] fib = new int[n];
+        int a = sc.nextInt();   // first term
+        int d = sc.nextInt();   // common difference
+        int n = sc.nextInt();   // number of terms
 
-        fib[0] = 0;
-        fib[1] = 1;
+        // Approach 1 : Brute Force
+        int term = a;
 
-        for (int i = 2; i < n; i++) {
-            fib[i] = fib[i - 1] + fib[i - 2];
+        for (int i = 1; i <= n; i++) {
+            System.out.print(term + " ");
+            term += d;
         }
+        System.out.println(term);
+
+        // Approach 2 : better {Formula based answer }
 
         for (int i = 0; i < n; i++) {
-            System.out.print(fib[i] + " ");
-        }
-        System.out.println();
-
-        // Apprpoach 2 : recursion
-        for(int i=0; i<n; i++){
-            System.out.print(fab(i));
+            System.out.print((a + i * d) + " ");
         }
 
-    }
-    static int fab(int n){
-        if(n == 0){
-            return 0;
-        }else if(n == 1){
-            return  1;
-        }else{
-            return fab(n-1)+fab(n-2);
-        }
+
+
+
     }
 }

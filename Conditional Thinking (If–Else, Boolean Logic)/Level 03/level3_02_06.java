@@ -5,31 +5,13 @@ public class level3_02_06 {
         Scanner sc = new Scanner(System.in);
 
         // Approach 1 : Brute Force
-        int num = sc.nextInt();
-        int sum = 0;
+        int n = sc.nextInt();
 
-        for (int i = 1; i < num; i++) {
-            if (num % i == 0) {
-                sum += i;
+        // n/2 because the factors doesnot exist after crossing the middle one
+        for (int i = 1; i <= n/2; i++) {
+            if (n % i == 0) {
+                System.out.print(i + " ");
             }
-        }
-
-        System.out.println(sum == num ?
-                "Perfect Number" : "Not Perfect");
-
-        // Approach 2 : better
-        sum = 1;  // reassign to 1 for doing different apporoaches
-
-        for (int i = 2; i <= num / 2; i++) {
-            if (num % i == 0) {
-                sum += i;
-            }
-        }
-
-        if (num > 1 && sum == num) {
-            System.out.println("Perfect Number");
-        } else {
-            System.out.println("Not Perfect");
         }
 
     }

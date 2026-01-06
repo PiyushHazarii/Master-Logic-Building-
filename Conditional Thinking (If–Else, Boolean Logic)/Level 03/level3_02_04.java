@@ -17,6 +17,6 @@ public class level3_02_04 {
             }
         }
 
-        System.out.println("HCF = " + hcf);
+        System.out.println("HCF = " + hcf); //O(log n) best
     }
 }

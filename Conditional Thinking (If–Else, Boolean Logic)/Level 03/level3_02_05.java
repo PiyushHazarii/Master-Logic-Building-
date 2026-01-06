@@ -3,20 +3,35 @@ import java.util.Scanner;
 public class level3_02_05 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int original = n;
-        int squareOfDigits=0;
+        int a = sc.nextInt();
+        int b = sc.nextInt();
 
-        while(n>0){
-            int digit = n%10;
-            squareOfDigits += digit*digit*digit; //Math.pow(digit, 3)
-            n /= 10;
+        // Brute Force:
+        // LCM (Least Common Multiple) is the smallest positive number that is divisible by both numbers.
+        int lcm = Math.max(a, b);
+
+        while (true) {
+            if (lcm % a == 0 && lcm % b == 0) {
+                break;
+            }
+            lcm++;
         }
 
-        if(original == squareOfDigits){
-            System.out.println("Armstrong");
-        }else{
-            System.out.println("Not an armstrong");
+        System.out.println("LCM = " + lcm);
+
+
+        // Optimal approach :
+        int x = a;
+        int y = b;
+        while (b >0){
+            int remainder = a% b;
+            a = b;
+            b= remainder;
         }
+
+//        now
+
+        int lcmUsingHcf = (x*y) / a;
+        System.out.println(lcmUsingHcf); //O(log min(a, b)) best
     }
 }
