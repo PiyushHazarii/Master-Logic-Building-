@@ -1,20 +1,17 @@
+import java.util.Scanner;
+
+//11. Print Numbers in an Increasing Sequence (1, 12, 123, 1234, 12345)
 public class level4_02_07 {
-    static boolean isPrime(int n) {
-        if (n <= 1) return false;
-
-        for (int i = 2; i * i <= n; i++) {
-            if (n % i == 0)
-                return false;
-        }
-        return true;
-    }
-
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        for (int i = 2; i <= 100; i++) {
-            if (isPrime(i)) {
-                System.out.print(i + " ");
+        int n = sc.nextInt();
+
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=i; j++){
+                System.out.print(j);
             }
+            System.out.println();
         }
     }
 }

@@ -1,35 +1,24 @@
 import java.util.Scanner;
 
+//10. Print Stars and Spaces Alternating (Stars and Blank Spaces)
 public class level4_02_06 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Approach 1 : Brute Force
-        int num = sc.nextInt();
-        int sum = 0;
+        int n = sc.nextInt();
 
-        for (int i = 1; i < num; i++) {
-            if (num % i == 0) {
-                sum += i;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                System.out.print("b");
             }
-        }
-
-        System.out.println(sum == num ?
-                "Perfect Number" : "Not Perfect");
-
-        // Approach 2 : better
-        sum = 1;  // reassign to 1 for doing different apporoaches
-
-        for (int i = 2; i <= num / 2; i++) {
-            if (num % i == 0) {
-                sum += i;
+            for (int k = 0; k < 2 * i + 1; k++) {
+                if (k == 0 || k % 2 == 0) {
+                    System.out.print("*");
+                } else {
+                    System.out.print("b");
+                }
             }
-        }
-
-        if (num > 1 && sum == num) {
-            System.out.println("Perfect Number");
-        } else {
-            System.out.println("Not Perfect");
+            System.out.println();
         }
 
     }
